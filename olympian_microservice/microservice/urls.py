@@ -12,9 +12,9 @@ from rest_framework.authtoken import views
 
 
 
-schema_view = get_swagger_view(title='Olympians', url='/company')
+schema_view = get_swagger_view(title='Olympians')
 
-urlpatterns = [  
+urlpatterns = [
     url(r'^$', schema_view),
     path('admin/', admin.site.urls),
     path('', include('olympians.urls', namespace="olympians")),

@@ -37,6 +37,8 @@ SWAGGER_SETTINGS = {
 LOGIN_URL = 'rest_framework:login'
 LOGOUT_URL = 'rest_framework:logout'
 
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',   
+    'corsheaders',
     'olympians',
     'rest_framework_swagger',
     'rest_framework.authtoken',
