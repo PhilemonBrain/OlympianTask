@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 from olympians.permissions import IsOwnerOrReadOnly
 from rest_framework.reverse import reverse
 from rest_framework import renderers
-from rest_framework.authentication import  TokenAuthentication
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.authtoken.models import Token
 
 
@@ -36,7 +36,7 @@ class CompanyList(generics.ListCreateAPIView):
     """
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [TokenAuthentication, SessionAuthentication]
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
@@ -48,7 +48,7 @@ class CompanyDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [TokenAuthentication, SessionAuthentication]
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
 
 
