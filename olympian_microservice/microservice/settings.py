@@ -33,9 +33,13 @@ SWAGGER_SETTINGS = {
 LOGIN_URL = "rest_framework:login"
 LOGOUT_URL = "rest_framework:logout"
 
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+
 # Application definition
 
 INSTALLED_APPS = [
+
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
